@@ -1,0 +1,14 @@
+---
+# tasks for bash
+- name: Install Bash Completion
+  package:
+    state=present
+    name=bash-completion
+
+- name: Bash History Timestamps
+  copy:
+    content='export HISTTIMEFORMAT="%b %d %T "'
+    dest=/etc/profile.d/bash_history.sh
+    owner=root
+    group=root
+    mode=0644
